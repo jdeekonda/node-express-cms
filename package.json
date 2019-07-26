@@ -1,0 +1,19 @@
+{
+  "name": "node_express_demo",
+  "version": "1.0.0",
+  "description": "basic web app using node-express js",
+  "main": "express-server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "web",
+    "node",
+    "express"
+  ],
+  "author": "Jagadeesh Deekonda",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
