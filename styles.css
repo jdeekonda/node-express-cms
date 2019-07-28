@@ -1,3 +1,33 @@
-div{
-  display: block;
+h1 {
+  text-align: center;
+}
+
+form {
+  position: relative;
+  width: 70%;
+  text-align: right;
+}
+
+label {
+  /* position: absolute;
+  width: 30%;
+  text-align: right;
+  left:10%;
+  margin-right: 30px; */
+}
+
+p {
+  margin: 0.5em;
+}
+
+#filename {
+  
+}
+
+#content {
+  
+}
+
+#send {
+  
 }
