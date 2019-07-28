@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles.css">
-  <title>Client for node express Server</title>
+  <title>Client for node-express Server</title>
 </head>
 <body>
-  <div>
-      <form>
-          <input type="text" id="filename">
-          <input type="textarea" id="content">
-          <input type="submit" id="send">
-        </form>
-  </div>
+      <h1> CMS using node-express server </h1>
+      <form action="" method="POST">
+        <p> <label>File Name: </label>
+          <input type="text" id="filename" id="filename"> 
+        </p>  
+        <p><label>File Content: </label>
+          <input type="textarea" id="content" id="content">
+        </p>
+        <p><input type="submit" id="send" value="Create Page"></p>
+      </form>
 </body>
 </html>
