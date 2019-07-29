@@ -11,12 +11,24 @@
       <h1> CMS using node-express server </h1>
       <form action="" method="POST">
         <p> <label>File Name: </label>
-          <input type="text" id="filename" id="filename"> 
+          <input type="text" id="filename"> 
         </p>  
         <p><label>File Content: </label>
-          <input type="textarea" id="content" id="content">
+          <input type="textarea" id="content">
         </p>
-        <p><input type="submit" id="send" value="Create Page"></p>
+        <p><input type="submit" id="send" value="Create Page" onclick="sendReqToServer()"></p>
       </form>
+      <script>
+        function sendReqToServer(){
+          const fileName = document.getElementById('filename').value;
+          const content = document.getElementById('content').value;
+          const reqData = { filename: fileName, content: content};
+          console.log('Captured request ..'+JSON.stringify(reqData));
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST','http://localhost:7000',true);
+          xhr.setRequestHeader('Content-Type','application/html;charset=utf-8');
+          xhr.send(JSON.stringify(reqData));
+        }
+      </script>
 </body>
 </html>

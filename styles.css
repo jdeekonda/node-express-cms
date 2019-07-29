@@ -4,16 +4,8 @@ h1 {
 
 form {
   position: relative;
-  width: 70%;
+  width: 50%;
   text-align: right;
-}
-
-label {
-  /* position: absolute;
-  width: 30%;
-  text-align: right;
-  left:10%;
-  margin-right: 30px; */
 }
 
 p {
@@ -21,13 +13,10 @@ p {
 }
 
 #filename {
-  
 }
 
 #content {
-  
 }
 
 #send {
-  
 }
