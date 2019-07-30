@@ -1,24 +1,30 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
+const fs = require('fs');
+
+const contentParser = require('./contentParser');
 
 const app = express();
-
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 app.get('/', function(req,res){
-  // console.log(req);
-  res.send('This is home page');
+  res.sendFile(path.join(__dirname,'index.html'));
 });
 
+// not implemented for now
+app.post('/login', (req, res) => {
+  console.log(contentParser(req.body.pwd))
+})
+
 app.post('/', function(req,res){
-  // console.log(req.body.filename);
-  // console.log(req.body.content);
-  res.send('Post request received for '+req.body.filename+' and '+ req.body.content);
+  const ws = fs.WriteStream(path.join(__dirname,'content_files',req.body.filename), (err) => {
+    if(err) throw new Error(err)
+});
+  ws.write(req.body.content);
+  ws.end();
+  res.send(`FILE CREATED successfully: ${req.body.filename} \n and added Content: ${req.body.content}`);
 });
 
 app.listen(7000, function(){

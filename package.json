@@ -4,7 +4,8 @@
   "description": "basic web app using node-express js",
   "main": "express-server.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "./node_modules/nodemon express-server.js"
   },
   "keywords": [
     "web",
@@ -14,8 +15,9 @@
   "author": "Jagadeesh Deekonda",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "cryptr": "^4.0.2",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
   },
-  "devDependencies": {  
-  }
+  "devDependencies": {}
 }
